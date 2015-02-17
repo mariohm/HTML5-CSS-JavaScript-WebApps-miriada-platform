@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Diferentes fuentes de texto</title>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            @font-face
+            {
+                font-family: 'FiraMono';
+                src: url(FiraSans-Light.woff) format("woff");
+            }
+            #fuente_firefox
+            {
+                font-family: FiraMono, serif;
+                text-align: center;
+                font-size: 1.5em;
+            }
+            #fuente_google
+            {
+                font-family: Indie Flower, serif;
+                text-align: center;
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="fuente_firefox">
+            Esto es un párrafo con fuentes vinculadas. La fuente es <strong>FiraOpenType</strong> de Firefox OS.
+        </p>
+        <p id="fuente_google">
+            Esa es elegante, pero esta vinculada de <strong>Google Fonts</strong> mola mucho más y no tienes que descargar naica.
+        </p>
+
+    </body>
+</html>
