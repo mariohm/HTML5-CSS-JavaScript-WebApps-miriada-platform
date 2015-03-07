@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mi página</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <style>
+            body
+            {
+                font-family: Ubuntu, serif;
+            	height: 100%;
+            	width: 100%;
+            	margin: 0px;
+                padding: 0px;
+            }
+            #main
+            {
+               height: 77%;
+               width: 100%;
+               background-color: #99FF99;
+               display: -webkit-flex;
+               display: flex;
+               flex-flow: row;
+            }
+            #main section.izquierda
+            {
+                height: 100%;
+                padding: 5px;
+                flex: 1 6 34%;
+            	order: 1;
+            }
+            #main section.derecha
+            {
+                height: 100%;
+                padding: 5px;
+                flex: 1 6 66%;
+            	order: 2;
+            }
+            #contenedor
+            {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap:wrap;
+            }
+            .vertical {
+                padding:3px;
+                border:1px solid black;
+                background-color:white;
+                width:300px;
+                height:400px;
+            }
+            header, footer
+            {
+            	display: block;
+            	height: 10%;
+            	background-color: #FC6;
+                padding: 5px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+        <body>
+            <header>
+                <strong>Mi página</strong>
+            </header>
+            <div id="main">
+                <section class="izquierda">
+                    Hola!<br/>
+                    Soy Mario, a fecha de 07 de Marzo de 2015 y a falta de una asignatura y el proyecto, curso el Grado en Ingeniería Informática con especialidad en Ciencias de la Computación e Inteligencia Artificial de la Universidad de Granada.<br/>
+                    Hace unos meses terminé un curso de programación en Android y conociendo el mundo WebServer me hallo en la <a href="http://osl.ugr.es", target="_blank">Oficina de Software Libre</a> de la Universidad de Granada.<br/>
+                    <img src="images/mario.png" alt="mario">
+                </section>
+                <section class="derecha">
+                    <strong>
+                        Y esta es mi galería!
+                    </strong>
+                    <div id="galeria">
+                        <object class="vertical" data="http://getbootstrap.com" type="text/html">
+                        </object>
+
+                        <iframe class="vertical" src="https://www.youtube.com/embed/1sV-OX5zkgQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                </section>
+
+
+            </div>
+            <footer>
+                <a href="http://www.miriadax.net", target="_blank">Curso en MiríadaX</a>
+            </footer>
+
+    </body>
+    <script type="text/javascript">
+        alert("Tranqui, sé que el contenido de la página no es el que\n se requiere (por flojera). Sólo tengo en cuenta\n el uso de JavaScript");
+        var altura = prompt("Indica la altura de la pared (metros): ");
+        var ancho = prompt("Indica el ancho de la pared (metros): ");
+        document.write("La superficie de la pared es de " + altura * ancho + " metros cuadrados");
+    </script>
+</html>

@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Estructura</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body
+            {
+                font-family: Roboto, serif;
+            	height: 100%;
+            	width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+            header
+            {
+                display: block;
+            	min-height: 12%;
+            	background: #FF6600;
+            }
+            footer
+            {
+                display: block;
+            	min-height: 10%;
+            	background: #FF6600;
+            }
+            #main
+            {
+               height: 78%;
+               display: -webkit-flex;
+               display: flex;
+               flex-flow: row;
+            }
+            #main section
+            {
+            	background: #CFC;
+            	flex: 3 1 60%;
+            	order: 2;
+            }
+            #main nav
+            {
+            	background: #CCF;
+            	flex: 1 6 20%;
+            	order: 1;
+            }
+            #main aside
+            {
+            	background: #CCF;
+            	flex: 1 6 20%;
+            	order: 3;
+            }
+            #sub
+            {
+                margin: 10px;
+                height: 78%;
+
+            }
+            #sub article
+            {
+                display: block;
+            	min-height: 80%;
+            	background: #FFCC00;
+
+            }
+            #sub header, #sub footer
+            {
+                display: block;
+                min-height:10%;
+                background: #FF0000;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <header>&lt;header&gt;</header>
+        <div id=main>
+            <section>
+                &lt;section&gt;
+                <div id=sub>
+                    <header>&lt;header&gt;</header>
+                    <article>&lt;article&gt;</article>
+                    <footer>&lt;footer&gt;</footer>
+                </div>
+            </section>
+            <nav>&lt;nav&gt;</nav>
+            <aside>&lt;aside&gt;</aside>
+        </div>
+        <footer>&lt;footer&gt;</footer>
+    </body>
+
+</html>
