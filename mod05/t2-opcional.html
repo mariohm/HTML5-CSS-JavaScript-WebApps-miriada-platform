@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>t2-opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <style>
+            body
+            {
+                font-family: 'Indie Flower', serif;
+                font-size: 1.3em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            Probando condicionales JavaScript
+        </h1>
+        <p id="capital"></p>
+    </body>
+    <script type="text/javascript">
+        var respuesta = prompt("¿Cuál es la capital de España?");
+        var res;
+        if(respuesta.toLowerCase() == "madrid")
+        {
+            res = "Correcto, Madrid es la capital de España";
+        }
+        else
+        {
+            res = "Su respuesta \"" + respuesta + "\" no es correcta";
+        }
+
+        document.getElementById("capital").innerHTML = res;
+    </script>
+</html>
