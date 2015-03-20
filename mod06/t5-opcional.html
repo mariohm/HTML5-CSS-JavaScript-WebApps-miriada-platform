@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tema 5 - opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body
+            {
+                font-family: 'Indie Flower', serif;
+                font-size: 1.2em;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Probando manejadores de eventos JavaScript</h1>
+        <p id="parrafo"></p>
+    </body>
+    <script type="text/javascript">
+        var parrafo = document.getElementById("parrafo");
+        var i = 0;
+        function mostrar_fecha()
+        {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
+            var milisegundos = fecha.getMilliseconds();
+
+            var formato = horas + " horas, " + minutos + " minutos, " + segundos + " segundos, " + milisegundos + " ms.";
+
+            parrafo.innerHTML = formato;
+        }
+
+        setInterval(mostrar_fecha, 1000);
+
+
+
+    </script>
+</html>
