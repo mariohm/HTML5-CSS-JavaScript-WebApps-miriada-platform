@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tema 6 - opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body
+            {
+                font-family: 'Ubuntu', serif;
+                font-size: 1em;
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript">
+            function consultar()
+            {
+                var resp = document.getElementById("respuesta");
+                var sol = document.getElementById("parrafo");
+                if("Cristóbal Colón" == resp.value)
+                {
+                    sol.innerHTML = "Correcto";
+                    resp.placeholder = "responda aquí...";
+                }
+                else
+                {
+                    sol.innerHTML = "No es correcto, asegúrate de escribirlo correctamente";
+                    resp.placeholder = "responda de nuevo...";
+                }
+                resp.value = "";
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Probando formularios JavaScript</h1>
+        <h2>¿Quién descubrió América?</h2>
+
+        <input id="respuesta" type="text" value="" placeholder="responda aquí...">
+
+        <button type="button" onclick="consultar()">Consultar</button>
+
+        <p id="parrafo"></p>
+
+    </body>
+</html>
