@@ -20,7 +20,9 @@
     </body>
     <script type="text/javascript">
         var parrafo = document.getElementById("parrafo");
+        var intervalo;
         var i = 0;
+
         function mostrar_fecha()
         {
             var fecha = new Date();
@@ -33,10 +35,22 @@
 
             parrafo.innerHTML = formato;
         }
+        /*
+        * Con el primer click paramos, segundo seguimos, tercero paramos, etc...
+        */
+        function start_stop()
+        {
+            i++;
 
-        setInterval(mostrar_fecha, 1000);
+            if(i % 2 == 0)
+                intervalo = setInterval(mostrar_fecha, 1);
+            else
+                clearInterval(intervalo);
+        }
 
+        intervalo = setInterval(mostrar_fecha, 1);
 
+        parrafo.addEventListener('click', start_stop);
 
     </script>
 </html>
