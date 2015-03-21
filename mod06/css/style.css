@@ -1,0 +1,37 @@
+body
+{
+    font-family: 'Ubuntu', serif;
+    text-align: center;
+}
+table
+{
+	/*padding: 0px;*/
+	margin: auto;
+	border-spacing: 0px;
+	border-top-width: 1px;
+	border-top-style: solid;
+    border-top-color: #FFFFFF;
+}
+th, td
+{
+    padding: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFFFFF;
+}
+th
+{
+	background-color: #4DB8FF;
+}
+td
+{
+	background-color: #CCEBFF;
+}
+#cab_izq
+{
+    border-top-left-radius: 25px;
+}
+#cab_der
+{
+    border-top-right-radius: 25px;
+}
