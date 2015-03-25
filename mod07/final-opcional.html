@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Final - opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <style>
+            body
+            {
+                font-family: 'Ubuntu', serif
+            }
+
+            iframe
+            {
+                padding:10px;
+                border:5px solid pink;
+                background-color:white;
+                width:300px;
+                height:350px;
+            }
+
+            #iframes
+            {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap:wrap;
+            }
+
+            #marco
+            {
+                background-color: pink;
+                padding: 10px;
+                margin: 10px;
+                border: 3px solid black;
+            }
+
+        </style>
+
+        <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+        <script type="text/javascript">
+
+            $(function()
+            {
+                var urls = ["http://getbootstrap.com","http://vishub.org"];
+
+                function mostrar(urls)
+                {
+                    var i, iframes="";
+                    for (i=0;  i < urls.length;  ++i)
+                    {
+                        iframes += "<iframe src='" + urls[i] + "'></iframe>";
+                    }
+                    $('#iframes').html(iframes);
+                };
+
+                $("#boton").on('click', function()
+                {
+                    urls.push($('#nuevo').val());
+                    mostrar(urls);
+                    $('#nuevo').val("");
+                });
+
+                mostrar(urls);
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <h1>Probando iFrames y Arrays con diseño responsivo</h1>
+
+        <input type="text" id="nuevo" placeholder="introduce una url válida..." />
+        <button type="button" id="boton"> Añadir </button>
+        <p>
+            <div id='marco'>
+                <div id="iframes"></div>
+            </div>
+        </p>
+
+</body>
+</html>
