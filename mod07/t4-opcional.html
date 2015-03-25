@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tema 4 - opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    </head>
+    <style type="text/css">
+        body
+        {
+            font-family: 'Ubuntu', serif;
+            text-align: center
+
+        }
+    </style>
+    <body>
+        <h1>Probando bucles while y for en JavaScript</h1>
+        <p id="parrafo"></p>
+
+
+
+        <script type="text/javascript">
+
+            function bucleFor(res)
+            {
+                var i = 0;
+
+                for(;i!="acabar";)
+                {
+                    i = prompt("Ahora la suma vale: " + res + "\nEscribe 'acabar' para salir del bucle");
+                    if(i == "acabar")
+                        return res;
+
+                    if(isNaN(parseInt(i)))
+                        alert("Entrada errónea, inténtalo de nuevo");
+
+                    else
+                        res += parseInt(i);
+                }
+
+                return res;
+            }
+
+            function bucleWhile(res)
+            {
+                var i = 0;
+
+                while(i!="acabar")
+                {
+                    i = prompt("Ahora la suma vale: " + res + "\nEscribe 'acabar' para salir del bucle");
+                    if(i == "acabar")
+                        return res;
+
+                    if(isNaN(parseInt(i)))
+                        alert("Entrada errónea, inténtalo de nuevo");
+
+                    else
+                        res += parseInt(i);
+                }
+
+                return res;
+            }
+
+            function compruebaBucle(tipo)
+            {
+                var suma = 0;
+
+                if(tipo == "for")
+                    suma = bucleFor(suma);
+
+                else if(tipo == "while")
+                    suma = bucleWhile(suma);
+
+                else
+                {
+                    tipo = prompt("Solo uso un script\nIntroduce el tipo de bucle (for/while) para realizar el ejercicio");
+
+                    compruebaBucle(tipo);
+                }
+
+                return suma;
+            }
+
+            var par = document.getElementById("parrafo");
+            var tipoBucle = prompt("Introduce el tipo de bucle (for/while) para realizar el ejercicio");
+
+            var suma = compruebaBucle(tipoBucle);
+
+            par.innerHTML = "El resultado de la suma es de " + suma;
+
+        </script>
+    </body>
+</html>
