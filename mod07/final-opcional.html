@@ -11,32 +11,34 @@
                 font-family: 'Ubuntu', serif
             }
 
-            iframe
-            {
-                padding:10px;
-                border:5px solid pink;
-                background-color:white;
-                width:300px;
-                height:350px;
-            }
-
-            #iframes
-            {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-flex-wrap: wrap;
-                flex-wrap:wrap;
-            }
-
             #marco
             {
                 background-color: pink;
                 padding: 10px;
                 margin: 10px;
                 border: 3px solid black;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+
+            #marco div
+            {
+                text-align: center;
+                padding: 10px;
+                border: 5px solid pink;
+                background-color: pink;
+                width: 300px;
+                height: 370px;
+            }
+
+            iframe
+            {
+                height: 350px;
             }
 
         </style>
@@ -51,11 +53,13 @@
                 function mostrar(urls)
                 {
                     var i, iframes="";
-                    for (i=0;  i < urls.length;  ++i)
+                    for (i=0; i < urls.length; i++)
                     {
+                        iframes += "<div>URL_" + i + ": " + urls[i];
                         iframes += "<iframe src='" + urls[i] + "'></iframe>";
+                        iframes += "</div>";
                     }
-                    $('#iframes').html(iframes);
+                    $('#marco').html(iframes);
                 };
 
                 $("#boton").on('click', function()
@@ -63,6 +67,18 @@
                     urls.push($('#nuevo').val());
                     mostrar(urls);
                     $('#nuevo').val("");
+                });
+
+                $("#eliminar").on('click', function()
+                {
+                    var elem = parseInt($('#borrar').val());
+                    if(elem >= 0 && elem < urls.length)
+                    {
+                        urls.splice(elem, 1);
+                        mostrar(urls);
+                    }
+
+                    $('#borrar').val("");
                 });
 
                 mostrar(urls);
@@ -74,11 +90,12 @@
     <body>
         <h1>Probando iFrames y Arrays con diseño responsivo</h1>
 
-        <input type="text" id="nuevo" placeholder="introduce una url válida..." />
+        <input type="text" id="nuevo" placeholder="introduce una URL válida..." />
         <button type="button" id="boton"> Añadir </button>
+        <input type="text" id="borrar" size="30" placeholder="introduce el número de la URL a eliminar..." />
+        <button type="button" id="eliminar"> Eliminar </button>
         <p>
             <div id='marco'>
-                <div id="iframes"></div>
             </div>
         </p>
 
