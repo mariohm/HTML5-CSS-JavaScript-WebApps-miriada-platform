@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tema 2 - opcional</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body
+            {
+                height: 100%;
+                width: 100%;
+                background-color: #CCCCCC;
+                text-align: center;
+
+
+            }
+            div
+            {
+                font-family: 'Ubuntu', serif;
+                font-size: 500%;
+                display: -webkit-flex;
+                display: flex;
+            }
+        </style>
+        <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+        <script type="text/javascript" src="../touch.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var t, cl = $("#crono");
+
+                function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
+                function arrancar() { t=setInterval(mostrar, 100);};
+                function parar()    { clearInterval(t);  t=undefined; };
+                function cambiar()  { if (!t) arrancar(); else parar(); };
+
+                cl.on('tap', cambiar);
+                cl.on('swipe', function(){ cl.html("0.0"); });
+            });
+        </script>
+
+    </head>
+
+    <body>
+      <div id="principal">
+        <h2>
+            <span id="crono"> 0.0 </span> segundos
+        </h2>
+      </div>
+
+
+    </body>
+</html>
