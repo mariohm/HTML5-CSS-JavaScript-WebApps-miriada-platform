@@ -1,0 +1,38 @@
+body
+{
+    text-align: center;
+    font-family: 'Ubuntu', serif;
+    height: 100%;
+    width: 100%;
+}
+#principal
+{
+    background-image: url("../images/crono.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+    width: 100%;
+}
+#crono
+{
+    margin-top: 84px;
+    font-size: 1.5em;
+    width: 100%;
+}
+#cambiar
+{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+#inicializar
+{
+    margin-top: 30px;
+    margin-left: 180px;
+
+}
