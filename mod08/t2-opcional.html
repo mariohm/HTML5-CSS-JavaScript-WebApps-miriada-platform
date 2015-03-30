@@ -7,44 +7,70 @@
         <style type="text/css">
             body
             {
-                height: 100%;
-                width: 100%;
-                background-color: #CCCCCC;
                 text-align: center;
-
-
+                font-family: 'Ubuntu', serif;
             }
             div
             {
-                font-family: 'Ubuntu', serif;
-                font-size: 500%;
+                background-color: #CCCCCC;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
                 display: -webkit-flex;
                 display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap:wrap;
+                width: 100%;
+            }
+            p
+            {
+                font-size: 3em;
+                width: 100%;
+            }
+            button
+            {
+                height: 50px;
+                width: 50%;
             }
         </style>
         <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
         <script type="text/javascript" src="../touch.js"></script>
         <script type="text/javascript">
-            $(function(){
-                var t, cl = $("#crono");
+        $(function(){
+            var t, cl = $("#crono");
 
-                function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
-                function arrancar() { t=setInterval(mostrar, 100);};
-                function parar()    { clearInterval(t);  t=undefined; };
-                function cambiar()  { if (!t) arrancar(); else parar(); };
+            function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
+            function arrancar() { t=setInterval(mostrar, 100);};
+            function parar()    { clearInterval(t);  t=undefined; };
+            function cambiar()  { if (!t) arrancar(); else parar(); };
 
-                cl.on('tap', cambiar);
-                cl.on('swipe', function(){ cl.html("0.0"); });
-            });
+            if(typeof window.ontouchstart !== 'undefined')
+            {
+                //Evento táctil en todo el div principal
+                $("#principal").on('tap', cambiar);
+                $("#principal").on('swipe', function(){ cl.html("0.0"); });
+
+                $("#cambiar").attr("style", "display: none;");
+                $("#inicializar").attr("style", "display: none;");
+
+            }
+            else
+            {
+                $("#cambiar").on('click', cambiar);
+                $("#inicializar").on('click', function(){ cl.html("0.0"); });
+            }
+
+        });
         </script>
 
     </head>
 
     <body>
       <div id="principal">
-        <h2>
-            <span id="crono"> 0.0 </span> segundos
-        </h2>
+        <p><span id="crono"> 0.0 </span> segundos</p>
+
+        <button type="button" id="cambiar"> arrancar/parar </button>
+        <button type="button" id="inicializar">  inicializar </button>
       </div>
 
 
