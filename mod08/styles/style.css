@@ -1,16 +1,41 @@
-*
+div
 {
-    font-family: 'Ubuntu', serif;
+    height: 180px;
+}
+#instantes
+{
     text-align: center;
+    font-family: 'Ubuntu', serif;
+    font-size: 1.5em;
 }
 #principal
 {
     width: 100%;
+    background: url("../images/crono.png") center no-repeat;
+    text-align: center;
 }
 #crono
 {
-    position: relative;
+    font-family: 'Ubuntu', serif;
     font-size: 1.5em;
-    bottom: 66px;
-    left: 148px;
+    position: relative;
+    top: 49%;
+}
+#botones
+{
+    position: relative;
+    top: -16%;
+    width: 100%;
+}
+#cambiar
+{
+    position: absolute;
+    top: 71%;
+    left: 10%;
+}
+#inicializar
+{
+    position: absolute;
+    top: 71%;
+    right: 10%;
 }
