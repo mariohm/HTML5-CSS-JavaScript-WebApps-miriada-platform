@@ -1,0 +1,22 @@
+{
+    "version": "1.0",
+
+    "name": "Crónometro",
+
+    "description": "Cronómetro con registro de tiempos de parada",
+
+    "launch_path": "/mod09/hosted/obligatorio.html",
+
+    "icons":
+    {
+        "16": "/mod09/hosted/ico_16.png",
+        "48": "/mod09/hosted/ico_48.png",
+        "128": "/mod09/hosted/ico_128.png"
+    },
+
+    "developer":
+    {
+        "name": "Mario Heredia"
+    }
+
+}
