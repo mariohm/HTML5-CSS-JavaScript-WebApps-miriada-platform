@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Tema 1 - opcional</title>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+    <style>
+        #reloj
+        {
+        	height: 80%;
+        	width: 80%;
+        	margin-left: 10%;
+        }
+        body
+        {
+        	height: 100%;
+        	width: 100%;
+        	margin: 0px;
+        	padding: 0px;
+        	color: #FFFFFF;
+        	background-color: #000000;
+        }
+        html
+        {
+        	height: 100%;
+        	width: 100%;
+        }
+        h1
+        {
+        	text-align: center;
+        	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        	color: red;
+        }
+        #digital
+        {
+            font-size: 0.5em;
+            font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+            fill: red;
+        }
+    </style>
+    <script>
+        function aniade0(numero)
+        {
+            if(numero < 10)
+            {
+                numero = "0" + numero;
+            }
+            return numero;
+        }
+        function animar() {
+            var d = new Date();
+            var h = (d.getHours()*30)+(d.getMinutes()/2);
+            var m = d.getMinutes()*6;
+            var s = d.getSeconds()*6;
+            //Uso Math.floor para quedarme con la parte entera de la primera
+            //división (obtener décimas de segundo) y multiplico por 3.63 para establecer
+            //el ángulo de rotación
+            var dec = Math.floor(d.getMilliseconds()/10)*3.63;
+            var digital = $('#digital');
+            var hora = aniade0(d.getHours()) + ":" + aniade0(d.getMinutes()) + ":" + aniade0(d.getSeconds());
+            digital.html(hora);
+            $("#hor").attr("transform", "rotate(" + h + " 60 60)");
+            $("#min").attr("transform", "rotate(" + m + " 60 60)");
+            $("#seg").attr("transform", "rotate(" + s + " 60 60)");
+            $('#decimas').attr("transform", "rotate(" + dec + " 60 95)");
+        }
+
+      $(function(){
+        setInterval(animar, 10);
+        animar();
+      })
+    </script>
+    </head>
+
+    <body>
+        <h1>RELOJ</h1>
+        <svg id="reloj" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" >
+            <circle id='myCircle'  cx='60' cy='60' r='50' stroke='white'  stroke-width='1'/>
+            <text id="digital" x="45" y="30">texto</text>
+            <circle id='myLittleCircle' cx='60' cy='95' r='10' stroke='white' stroke-width='0.5'/>
+            <line stroke-linecap="round" id="decimas" x1='60' y1='95' x2='60' y2='90' style='stroke: white; stroke-width: 1'/>
+            <line stroke-linecap="round" id="hor" x1='60' y1='60' x2='60' y2='30' style='stroke:white;stroke-width:3'/>
+            <line stroke-linecap="round" id="min" x1='60' y1='60' x2='60' y2='20' style='stroke:white;stroke-width:3'/>
+            <circle id='seg'  cx='60' cy='10' r='2' fill='red'/>
+        </svg>
+
+    </body>
+</html>
