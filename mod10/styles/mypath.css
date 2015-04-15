@@ -2,40 +2,19 @@ body{
   font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
 }
 
-#latlng{
-  display: block;
-  margin: 0;
-  padding: 0;
-  position: absolute; /* posición absoluta a navegador */
-  top: 0;             /* ajusta a borde de navegador */
-  left: 0;
-  right: 0;
-  height: 50px;
+#boton{
+  width: 100%;
   text-align: center;
-  background: rgba(0,0,0,0.1);
-}
-
-#registro
-{
-    display: block;
-    width: 33%; /* toma una pequeña zona para llevar el registro de rutas*/
-    margin: 3px;
-    padding: 0;
-    position: absolute; /* posición absoluta a navegador */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255,0,0,0.1); /* gris si no hay mapa */
+  height: 40px;
 }
 
 #map{
   display: block;
-  margin: 3px;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
   position: absolute; /* posición absoluta a navegador */
-  top: 0;
-  left: 33%;        /* ajusta al resto de pantalla*/
+  top: 40px;
+  left: 0;        /* ajusta a la ventana*/
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,0.1); /* gris si no hay mapa */
