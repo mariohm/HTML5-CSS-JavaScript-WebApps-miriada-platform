@@ -33,7 +33,6 @@ $(function(){
     {
         if(locations.length > 1)
         {
-            alert("locations tiene cosas");
             var i = 0;
             click = 0;
 

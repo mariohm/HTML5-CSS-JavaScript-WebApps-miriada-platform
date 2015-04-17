@@ -1,0 +1,28 @@
+{
+    "version": "1.0",
+
+    "name": "Creación de Rutas",
+
+    "description": "Aplicación basada en geolocalización. Permite crear una ruta dados dos puntos en el mapa",
+
+    "launch_path": "/mod10/t2-opcional/hosted/t2-opcional.html",
+
+    "permissions": {
+    "geolocation": {
+        "description": "Obtiene la actual localización del usuario."
+    }
+    },
+
+    "icons":
+    {
+        "16": "/mod10/t2-opcional/hosted/ico_16.png",
+        "48": "/mod10/t2-opcional/hosted/ico_48.png",
+        "128": "/mod10/t2-opcional/hosted/ico_128.png"
+    },
+
+    "developer":
+    {
+        "name": "Mario Heredia"
+    }
+
+}
