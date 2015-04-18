@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>La tienda de Mario - Creación de Rutas</title>
+
+</head>
+<body>
+    <p>
+        Página de Auto-Instalación de la aplicación de Creación de Rutas 1.0
+    </p>
+    <script>
+        (function()
+        {
+            var manifestURL = location.href.replace("index.html", "") + 'package.manifest';
+
+            if(!navigator.mozApps.installPackage)
+            {
+                alert("ERROR: Esta aplicación no es compatible con tu dispositivo");
+                return;
+            }
+
+            var req = navigator.mozApps.installPackage(manifestURL);
+            req.onsuccess = function()
+            {
+                alert("Instalación completada. " + this.result.origin);
+            };
+
+            req.onerror = function()
+            {
+                alert("Error de instalación: " + this.error.name);
+            };
+        }
+        )();
+    </script>
+</body>
+</html>
