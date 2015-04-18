@@ -1,0 +1,22 @@
+body{
+  font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+}
+
+#boton, #boton2{
+  width: 100%;
+  text-align: center;
+  height: 45px;
+  font-size: 1.5em;
+}
+
+#map{
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  position: absolute; /* posición absoluta a navegador */
+  top: 90px;
+  left: 0;        /* ajusta a la ventana*/
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.1); /* gris si no hay mapa */
+}
